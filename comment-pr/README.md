@@ -7,7 +7,7 @@ This action allows commenting PR, optionally removing previous version of commen
 
 ### `body`
 
-Comment body to publish. Literal `\n` will be replaced with newline.
+Comment body to publish.
 
 ### `dedupe_token`
 
@@ -21,4 +21,8 @@ None
 
 uses: ovotech/github-actions/comment-pr@master
 with:
-  body: Publish this comment
+  body: |
+    Comment header
+    Publish this comment
+  dedupe_token: Comment header
+  
