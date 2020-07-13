@@ -1,0 +1,21 @@
+name: comment-pr
+
+on:
+  pull_request:
+    paths:
+    - "comment-pr/**"
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ./comment-pr
+      with:
+        body: "deduplicated comment. should be replaced soon, error if not"
+
+    - uses: ./comment-pr
+      with:
+        body: deduplicated comment. all done
+        dedupe_token: "deduplicated comment"
