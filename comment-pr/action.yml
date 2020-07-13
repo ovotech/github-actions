@@ -1,0 +1,16 @@
+name: 'comment-pr'
+description: 'Comments on PR'
+inputs:
+  github-token:
+    description: The GitHub token to use when making Github API calls
+    default: ${{ github.token }}
+    required: false
+  body:
+    description: Comment body
+    required: true
+  dedupe_token:
+    description: Comments containing dedupe token will be deleted prior to adding a new comment
+    required: false
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
