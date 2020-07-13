@@ -9,7 +9,7 @@ async function main() {
     };
 
     const dedupe_token = core.getInput("dedupe_token");
-    const body = core.getInput("body", { required: true }).replace("\\n", "\n");
+    const body = core.getInput("body", { required: true });
 
     if (dedupe_token && !body.includes(dedupe_token)) {
         core.setFailed("If you specify 'dedupe_token' it must be included in body");
